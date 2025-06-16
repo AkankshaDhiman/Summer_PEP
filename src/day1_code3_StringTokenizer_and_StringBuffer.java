@@ -1,6 +1,6 @@
 import java.util.StringTokenizer;
 
-public class day1_code3 {
+public class day1_code3_StringTokenizer_and_StringBuffer {
     public static void main(String[] args) {
 //            String s1= new String("Monday");
 //            StringBuffer s2=new StringBuffer("Monday");

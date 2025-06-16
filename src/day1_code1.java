@@ -13,4 +13,5 @@ public class day1_code1 {
     void m() {
         System.out.println("16june");
     }
+
 }
