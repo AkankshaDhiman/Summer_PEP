@@ -1,4 +1,4 @@
-package Person;
+package Access_Modifiers;
 
 public class Person {
     String name;
