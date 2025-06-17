@@ -36,5 +36,6 @@ public class day1_code3_StringTokenizer_and_StringBuffer {
         while (st.countTokens()>0){
             System.out.println(st.nextToken());
         }
+        System.out.println(st.hasMoreElements());
     }
 }
