@@ -10,12 +10,13 @@ public class Person {
         this.age = age;
         this.nationality = nationality;
         System.out.println();
-        System.out.println("person details");
+        System.out.println("Person details");
         System.out.println("Person name: " + name);
         System.out.println("Person age: " + age);
         System.out.println("Person nationality: " + nationality);
     }
+
     public Person() {
-        System.out.println("Person constructor called");
+        System.out.println("Person default constructor called");
     }
 }
