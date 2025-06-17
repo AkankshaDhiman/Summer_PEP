@@ -1,5 +1,4 @@
 package Person;
-
 public class Student extends Person {
     String qualification;
     int id;
@@ -7,13 +6,14 @@ public class Student extends Person {
 
     public Student() {
         super();
-        System.out.println("Student Constructor");
+        System.out.println("Student Constructor called");
     }
     public Student(String qualification, int id, String college) {
         super("John",25,"American");
         this.qualification = qualification;
         this.id = id;
         this.college = college;
+        System.out.println();
         System.out.println("Student details");
         System.out.println("qualification: " + qualification);
         System.out.println("id: " + id);
