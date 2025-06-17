@@ -5,6 +5,9 @@ public class Vehicle {
     String tyre;
     int seats;
 
+    public Vehicle() {
+        System.out.println("Vehicle Constructor");
+    }
     public Vehicle(String engine, String tyre, int seats) {
         this.engine = engine;
         this.tyre = tyre;
