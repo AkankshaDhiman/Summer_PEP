@@ -10,8 +10,7 @@ public class To_Execute {
         Truck truck = new Truck("Diesel", "Heavy-Duty", 2, "Volvo FH", "Red");
         System.out.println("Truck Details:");
         truck.displayTruckInfo();
-        Vehicle v= new Car();
-        v.displayVehicleInfo();
+
 
     }
 }
