@@ -1,4 +1,4 @@
-package Access_Modifiers;
+package Access_Modifiers_and_Constructors;
 public class Student extends Person {
     String qualification;
     int id;
