@@ -24,7 +24,7 @@ class Puppy extends Dog {
 }
 class Main{
     public static void main(String[] args) {
-    Dog dog = new Puppy();
+    Animal dog = new Puppy();
     dog.movement();
     dog.eat();
     dog.sound();
