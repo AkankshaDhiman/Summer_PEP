@@ -1,19 +1,8 @@
+import java.util.Scanner;
+
 interface PaymentMethod {
-    void pay(double amount);
-}
+    boolean pay(double amount);
 
-class PayPal implements PaymentMethod {
-    @Override
-    public void pay(double amount) {
-        System.out.println("Paying " + amount + " using PayPal.");
-    }
-}
-
- class Paytm implements PaymentMethod {
-    @Override
-    public void pay(double amount) {
-        System.out.println("Paying " + amount + " using Paytm.");
-    }
 }
 
 class Payment{
@@ -22,17 +11,56 @@ class Payment{
     public Payment(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
-    public void pay(double amount) {
-        paymentMethod.pay(amount);
+    public boolean pay(double amount) {
+        return paymentMethod.pay(amount);
     }
 }
 
 public class Payment_Gateway{
     public static void main(String[] args) {
-        Payment payment1 = new Payment(new PayPal());
-        Payment payment2 = new Payment(new Paytm());
-        payment1.pay(2500);
-        payment2.pay(3000);
+        Scanner in = new Scanner(System.in);
+        Payment payment =null;
+        while(true) {
+            System.out.print("Select Payment Method \n 1. PayPal \n 2. Paytm \n");
+            int choice = in.nextInt();
 
+            final double[] accountBalance = {15740};
+            if (choice == 1) {
+                payment = new Payment(amount1 -> {
+                    if (amount1 > accountBalance[0]) {
+                        System.out.println("Insufficient balance for PayPal.");
+                        return false; // Fail if not enough funds
+                    } else {
+                        // Deduct amount from balance
+                        accountBalance[0] -= amount1;
+                        System.out.println("Paying " + amount1 + " using PayPal.");
+                        return true;
+                    }
+                });
+                break;
+            } else if (choice == 2) {
+                payment = new Payment(amount1 -> {
+                    if (amount1 > accountBalance[0]) {
+                        System.out.println("Insufficient balance for Paytm.");
+                        return false; // Fail if not enough funds
+                    } else {
+                        // Deduct amount from balance
+                        accountBalance[0] -= amount1;
+                        System.out.println("Paying " + amount1 + " using Paytm.");
+                        return true;
+                    }
+                });
+                break;
+            } else {
+                System.out.println("Invalid choice. Try again.");
+            }
+        }
+        System.out.println("Enter Amount to pay: ");
+        double amount = in.nextDouble();
+        if(payment.pay(amount)){
+            System.out.println("Payment successful. remaining amount is " + amount);
+        }else {
+            System.out.println("Payment failed.");
+        }
     }
 }
