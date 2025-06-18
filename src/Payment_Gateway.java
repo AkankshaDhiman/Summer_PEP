@@ -1,6 +1,3 @@
-public class Payment_Gateway {
-
-}
 interface PaymentMethod {
     void pay(double amount);
 }
@@ -30,7 +27,7 @@ class Payment{
     }
 }
 
-class Main{
+public class Payment_Gateway{
     public static void main(String[] args) {
         Payment payment1 = new Payment(new PayPal());
         Payment payment2 = new Payment(new Paytm());
