@@ -1,1 +1,1 @@
-# Summer_PEP_2025 JAVA Full Stack
+# Summer PEP 2025 JAVA Full Stack
